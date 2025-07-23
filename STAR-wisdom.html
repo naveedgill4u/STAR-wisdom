@@ -80,20 +80,64 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6,325 × 4
+<pre><code>tibble [6,325 × 4] (S3: tbl_df/tbl/data.frame)
+ $ g4math    : num [1:6325] NA 706 711 672 NA NA 668 NA 709 698 ...
+ $ kind      : chr [1:6325] "regular with aid" "regular with aid" "regular with aid" "small" ...
+ $ race      : chr [1:6325] "white" "black" "white" "black" ...
+ $ yearssmall: num [1:6325] 0 0 0 4 0 0 4 0 4 0 ...</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     g4math          kind               race             yearssmall    
+ Min.   :487.0   Length:6325        Length:6325        Min.   :0.0000  
+ 1st Qu.:688.0   Class :character   Class :character   1st Qu.:0.0000  
+ Median :710.0   Mode  :character   Mode  :character   Median :0.0000  
+ Mean   :708.8                                         Mean   :0.9542  
+ 3rd Qu.:732.5                                         3rd Qu.:2.0000  
+ Max.   :821.0                                         Max.   :4.0000  
+ NA's   :3930                                                          </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,325
+Columns: 4
+$ g4math     &lt;dbl&gt; NA, 706, 711, 672, NA, NA, 668, NA, 709, 698, NA, NA, NA, N…
+$ kind       &lt;chr&gt; "regular with aid", "regular with aid", "regular with aid",…
+$ race       &lt;chr&gt; "white", "black", "white", "black", "white", "white", "whit…
+$ yearssmall &lt;dbl&gt; 0, 0, 0, 4, 0, 0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0,…</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3933</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    g4math       kind       race yearssmall 
+      3930          0          3          0 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,930 × 4
    g4math kind             race  yearssmall
     &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;      &lt;dbl&gt;
  1     NA regular with aid white          0
- 2    706 regular with aid black          0
- 3    711 regular with aid white          0
- 4    672 small            black          4
- 5     NA regular          white          0
+ 2     NA regular          white          0
+ 3     NA regular with aid white          0
+ 4     NA regular with aid white          0
+ 5     NA regular with aid white          0
  6     NA regular with aid white          0
- 7    668 small            white          4
+ 7     NA regular          black          0
  8     NA regular with aid white          0
- 9    709 small            white          4
-10    698 regular          white          0
-# ℹ 6,315 more rows</code></pre>
+ 9     NA regular with aid white          0
+10     NA regular with aid white          0
+# ℹ 3,920 more rows</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  g4math kind    race  yearssmall
+   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt;
+1     NA small   &lt;NA&gt;           1
+2     NA regular &lt;NA&gt;           0
+3     NA regular &lt;NA&gt;           0</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     g4math        kind        race  yearssmall 
+62.13438735  0.00000000  0.04743083  0.00000000 </code></pre>
 </div>
 </div>
 </section>
@@ -119,6 +163,15 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools.</p>
 </blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="STAR-wisdom_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>

@@ -7,6 +7,7 @@ execute:
 
 ```{r}
 #| message: false
+#| warning: false
 
 library(tidyverse)      
 library(gt)             
@@ -49,7 +50,16 @@ Q; How students performance in small class relative to big
 * Explore the data. What is the outcome variable? How it is distributed?
 
 ```{r}
-x
+str(x)
+summary(x)
+view(x)
+glimpse(x)
+sum(is.na(x))
+colSums(is.na(x))
+x[!complete.cases(x), ]
+# Example: Missing values in "age" column
+x |> filter(is.na(race))
+colMeans(is.na(x)) * 100
 ```
 
 ### Preceptor Table
@@ -73,4 +83,21 @@ Frederick Mosteller (1995) “The Tennessee study of class size in the early sch
 > The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.
 
 > The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools.
+
+```{r}
+clean_x <- na.omit(x)
+
+ggplot(clean_x, aes(x = kind, y = g4math, fill = kind)) +
+  geom_boxplot(alpha = 0.6, outlier.color = "red") +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 3, fill = "yellow") +
+  facet_wrap(~ race, nrow = 2) +
+  labs(
+    title = "Grade 4 Math Scores by Class Type and Race",
+    x = "Class Type",
+    y = "G4 Math Score"
+  ) +
+  scale_fill_manual(values = c("regular" = "#0072B2", "small" = "#56B4E9")) +
+  theme_minimal(base_size = 14)
+
+```
 
